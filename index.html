@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a3a5c">
+<title>我的新闻台 · 四大板块</title>
+<style>
+  :root{
+    --bg:#f4f6f9;
+    --card:#ffffff;
+    --ink:#1f2937;
+    --sub:#6b7280;
+    --line:#e5e7eb;
+    --blue:#1a3a5c;
+    --blue2:#2563a8;
+    --gold:#c8a24a;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html,body{background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;
+    line-height:1.6;font-size:16px;}
+  body{max-width:520px;margin:0 auto;padding-bottom:90px;}
+
+  /* 顶部 */
+  header{
+    background:linear-gradient(135deg,#1a3a5c 0%,#2563a8 100%);
+    color:#fff;padding:22px 18px 18px;
+    border-radius:0 0 22px 22px;
+    box-shadow:0 4px 14px rgba(26,58,92,.25);
+  }
+  header h1{font-size:22px;letter-spacing:1px;}
+  header p{font-size:13px;opacity:.85;margin-top:4px;}
+  header .date{font-size:12px;opacity:.7;margin-top:8px;}
+
+  /* 板块切换 tab */
+  nav{
+    position:sticky;top:0;z-index:20;
+    display:flex;gap:6px;padding:10px 12px;
+    background:var(--bg);overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  nav::-webkit-scrollbar{display:none;}
+  nav button{
+    flex:0 0 auto;border:none;background:#fff;color:var(--sub);
+    padding:9px 16px;border-radius:20px;font-size:14px;
+    white-space:nowrap;cursor:pointer;transition:all .2s;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+  }
+  nav button.active{background:var(--blue);color:#fff;}
+
+  section{display:none;padding:8px 14px;}
+  section.show{display:block;animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .sec-title{font-size:17px;font-weight:700;margin:14px 4px 10px;
+    display:flex;align-items:center;gap:8px;}
+  .sec-title .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);}
+
+  /* 摘要卡片 */
+  .brief{
+    background:var(--card);border-radius:var(--radius);padding:14px;
+    margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05);
+    border-left:4px solid var(--gold);
+  }
+  .brief h3{font-size:15px;margin-bottom:8px;color:var(--blue);}
+  .brief ul{list-style:none;}
+  .brief li{font-size:14px;color:var(--ink);padding:6px 0;
+    border-bottom:1px dashed var(--line);}
+  .brief li:last-child{border-bottom:none;}
+  .brief li::before{content:"▪";color:var(--gold);margin-right:8px;}
+  .brief .note{font-size:12px;color:var(--sub);margin-top:8px;}
+
+  /* 媒体入口卡片 */
+  .media{
+    background:var(--card);border-radius:var(--radius);padding:4px 14px;
+    margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.05);
+  }
+  .media a{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;text-decoration:none;color:var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .media a:last-child{border-bottom:none;}
+  .media .name{font-size:15px;font-weight:600;}
+  .media .desc{font-size:12px;color:var(--sub);margin-top:2px;}
+  .media .go{color:var(--blue2);font-size:13px;flex:0 0 auto;}
+  .badge{display:inline-block;font-size:11px;color:var(--blue2);
+    background:#eef4fb;padding:1px 8px;border-radius:10px;margin-left:6px;}
+
+  /* 阅读提示 */
+  .tips{
+    background:#fff8ec;border-radius:var(--radius);padding:14px;
+    margin:10px 14px;font-size:13px;color:#8a6d2f;
+  }
+  .tips b{color:#a8822a;}
+
+  footer{text-align:center;font-size:12px;color:var(--sub);
+    padding:20px 16px;line-height:1.8;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📰 我的新闻台</h1>
+  <p>全球热点 · 国内时事 · 金融财经 · 云南本地</p>
+  <div class="date" id="today"></div>
+</header>
+
+<nav id="tabs">
+  <button data-tab="all" class="active">全部</button>
+  <button data-tab="global">🌍 全球热点</button>
+  <button data-tab="china">🇨🇳 国内时事</button>
+  <button data-tab="finance">💰 金融财经</button>
+  <button data-tab="local">🏔️ 云南本地</button>
+</nav>
+
+<!-- 全部：首页摘要 -->
+<section id="sec-all" class="show">
+  <div class="sec-title"><span class="dot"></span>今日要点摘要 <span style="font-size:12px;color:var(--sub);font-weight:400;" id="brief-date">2026年11月25日</span></div>
+
+  <!-- 全球热点 -->
+  <div class="brief">
+    <h3>🌍 全球热点</h3>
+    <ul>
+      <li>美股隔夜走弱：纳斯达克指数跌约2.5%，标普500跌约1.2%，道指基本持平（财联社）。</li>
+      <li>中俄美三国元首历史上首次面对面会晤，外交部称围绕维护世界和平、促进大国战略稳定交换意见，具开创性意义（央广网）。</li>
+    </ul>
+  </div>
+
+  <!-- 国内时事 -->
+  <div class="brief">
+    <h3>🇨🇳 国内时事</h3>
+    <ul>
+      <li>神舟二十四号载人飞船计划于11月25日08时18分在酒泉发射，3名航天员乘组已与媒体见面（新华社）。</li>
+      <li>神舟二十三号完成任务后将返回东风着陆场，巴基斯坦航天员齐尚·阿里将随乘组返回（新华社）。</li>
+    </ul>
+  </div>
+
+  <!-- 金融财经 -->
+  <div class="brief">
+    <h3>💰 金融财经</h3>
+    <ul>
+      <li>央行11月25日开展5000亿元7天期逆回购、8000亿元1年期MLF操作，保持银行体系流动性充裕（央行公告/澎湃）。</li>
+      <li>10月国民经济运行总体平稳、向新向优，就业形势总体稳定（国家统计局）。</li>
+    </ul>
+    <div class="note">仅为客观信息整理，不构成投资建议。</div>
+  </div>
+
+  <!-- 云南本地 -->
+  <div class="brief">
+    <h3>🏔️ 云南本地</h3>
+    <ul>
+      <li>云南省第十二次党代会召开，省领导看望各代表团代表（云南发布）。</li>
+      <li>腾冲科学家论坛创办5周年，2026年论坛定于12月4日至6日举行（开屏新闻）。</li>
+    </ul>
+  </div>
+
+  <div class="brief" style="border-left-color:#9ca3af;">
+    <h3 style="color:#6b7280;">📌 阅读说明</h3>
+    <ul>
+      <li>本页只做「入口聚合 + 要点提示」，新闻原文请点进各权威媒体官网阅读。</li>
+      <li>看大事先看官方通报，再看媒体解读；观点和事实分开看。</li>
+      <li>摘要由豆包每日更新，如需调整重点随时告诉我。</li>
+    </ul>
+  </div>
+
+  <div class="sec-title"><span class="dot"></span>快速入口</div>
+  <div class="media" id="quick"></div>
+</section>
+
+<!-- 全球热点 -->
+<section id="sec-global">
+  <div class="sec-title"><span class="dot"></span>全球热点 · 权威入口</div>
+  <div class="media">
+    <a href="https://www.news.cn/world/" target="_blank" rel="noopener">
+      <div><div class="name">新华社 · 国际频道<span class="badge">国家通讯社</span></div>
+      <div class="desc">全球220多个驻外机构，国际大事首发</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+    <a href="https://www.cankaoxiaoxi.com/" target="_blank" rel="noopener">
+      <div><div class="name">参考消息网<span class="badge">国际视角</span></div>
+      <div class="desc">编译全球各大媒体，看各国不同立场</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+    <a href="https://www.chinanews.com/" target="_blank" rel="noopener">
+      <div><div class="name">中国新闻网</div>
+      <div class="desc">国际快讯更新快，局势类报道及时</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+  </div>
+  <div class="tips">💡 <b>看国际新闻：</b>同一事件多看两家来源，地缘冲突类内容注意区分「事实报道」和「评论观点」。</div>
+</section>
+
+<!-- 国内时事 -->
+<section id="sec-china">
+  <div class="sec-title"><span class="dot"></span>国内时事 · 权威入口</div>
+  <div class="media">
+    <a href="http://www.people.com.cn/" target="_blank" rel="noopener">
+      <div><div class="name">人民网<span class="badge">党中央机关报</span></div>
+      <div class="desc">政策、重大事件、官方通报首选</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+    <a href="https://news.cctv.com/" target="_blank" rel="noopener">
+      <div><div class="name">央视新闻<span class="badge">主流电视媒体</span></div>
+      <div class="desc">新闻直播、现场报道、政策解读</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+    <a href="https://www.thepaper.cn/" target="_blank" rel="noopener">
+      <div><div class="name">澎湃新闻<span class="badge">深度时政</span></div>
+      <div class="desc">时政、社会事件长文深度报道</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+  </div>
+  <div class="tips">💡 <b>看政策：</b>重大政策先读官方原文/通报，再看媒体解读，别只信短视频里的几句话总结。</div>
+</section>
+
+<!-- 金融财经 -->
+<section id="sec-finance">
+  <div class="sec-title"><span class="dot"></span>金融财经 · 权威入口</div>
+  <div class="brief">
+    <h3>📌 两类需求分开看</h3>
+    <ul>
+      <li>了解宏观经济、行业大势：看第一财经、经济参考报。</li>
+      <li>了解股市、上市公司、监管动态：看中国证券报、证券时报。</li>
+    </ul>
+    <div class="note">「行情预测」「荐股」属观点，不等于事实；只看客观数据与政策公告。</div>
+  </div>
+  <div class="media">
+    <a href="https://www.yicai.com/" target="_blank" rel="noopener">
+      <div><div class="name">第一财经<span class="badge">宏观·行业</span></div>
+      <div class="desc">图文+直播+电台，普通人友好</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+    <a href="http://www.jjckb.cn/" target="_blank" rel="noopener">
+      <div><div class="name">经济参考报<span class="badge">新华社主管</span></div>
+      <div class="desc">宏观政策、经济走势报道扎实</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+    <a href="https://www.cs.com.cn/" target="_blank" rel="noopener">
+      <div><div class="name">中国证券报 · 中证网<span class="badge">证监会指定</span></div>
+      <div class="desc">资本市场、上市公司权威信披</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+    <a href="https://www.stcn.com/" target="_blank" rel="noopener">
+      <div><div class="name">证券时报<span class="badge">市场快讯</span></div>
+      <div class="desc">上市公司资讯、市场行情快讯</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+  </div>
+</section>
+
+<!-- 云南本地 -->
+<section id="sec-local">
+  <div class="sec-title"><span class="dot"></span>云南本地 · 昆明身边事</div>
+  <div class="media">
+    <a href="https://www.ccwb.cn/" target="_blank" rel="noopener">
+      <div><div class="name">开屏新闻<span class="badge">春城晚报矩阵</span></div>
+      <div class="desc">立足云南、报道昆明民生，纸报休刊期更新主力</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+    <a href="https://www.km.gov.cn/" target="_blank" rel="noopener">
+      <div><div class="name">昆明市人民政府网<span class="badge">政务</span></div>
+      <div class="desc">昆明政策、公告、便民信息原始来源</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+    <a href="https://www.yn.gov.cn/" target="_blank" rel="noopener">
+      <div><div class="name">云南省人民政府网<span class="badge">省级政务</span></div>
+      <div class="desc">云南要闻、政策发布、新闻发布厅</div></div>
+      <span class="go">前往 ›</span>
+    </a>
+  </div>
+  <div class="tips">💡 <b>看身边变化：</b>本地大事以开屏新闻看民生，政策类再去政府官网核对原文。</div>
+</section>
+
+<footer>
+  本页面为个人阅读入口聚合，不生产新闻、不转载原文。<br>
+  新闻版权归各媒体所有 · 点击跳转原官网阅读。
+</footer>
+
+<script>
+  // 日期
+  const d = new Date();
+  const week = ['日','一','二','三','四','五','六'][d.getDay()];
+  document.getElementById('today').textContent =
+    `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日 星期${week}`;
+
+  // tab 切换
+  const tabs = document.querySelectorAll('#tabs button');
+  const sections = {
+    all: document.getElementById('sec-all'),
+    global: document.getElementById('sec-global'),
+    china: document.getElementById('sec-china'),
+    finance: document.getElementById('sec-finance'),
+    local: document.getElementById('sec-local')
+  };
+  tabs.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      tabs.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      Object.values(sections).forEach(s=>s.classList.remove('show'));
+      sections[btn.dataset.tab].classList.add('show');
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+
+  // 首页快速入口（四大板块各放一个代表）
+  const quick = [
+    {name:'新华社 · 国际', url:'https://www.news.cn/world/', desc:'全球热点'},
+    {name:'人民网', url:'http://www.people.com.cn/', desc:'国内时事'},
+    {name:'第一财经', url:'https://www.yicai.com/', desc:'金融财经'},
+    {name:'开屏新闻', url:'https://www.ccwb.cn/', desc:'云南本地'}
+  ];
+  const q = document.getElementById('quick');
+  quick.forEach(it=>{
+    q.insertAdjacentHTML('beforeend',
+      `<a href="${it.url}" target="_blank" rel="noopener">
+        <div><div class="name">${it.name}</div><div class="desc">${it.desc}</div></div>
+        <span class="go">前往 ›</span></a>`);
+  });
+</script>
+</body>
+</html>
