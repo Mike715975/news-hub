@@ -71,6 +71,11 @@
   .brief li:last-child{border-bottom:none;}
   .brief li::before{content:"▪";color:var(--gold);margin-right:8px;}
   .brief .note{font-size:12px;color:var(--sub);margin-top:8px;}
+  .brief li a{display:block;text-decoration:none;color:var(--ink);}
+  .brief li a:active{color:var(--blue2);}
+  .brief .src{display:block;font-size:11px;color:var(--sub);margin-top:2px;}
+  .brief .src::before{content:"来源：";}
+  .panel-title{font-size:16px;font-weight:700;margin:6px 4px 10px;color:var(--blue);}
 
   /* 媒体入口卡片 */
   .media{
@@ -122,88 +127,83 @@
   <div class="sec-title"><span class="dot"></span>今日要点摘要 <span style="font-size:12px;color:var(--sub);font-weight:400;" id="brief-date">2026年11月25日</span></div>
 
   <!-- 全球热点 -->
-  <div class="brief">
-    <h3>🌍 全球热点</h3>
+  <div class="brief" id="list-global">
     <ul>
-      <li>伊朗称在其七项条件落实前将进一步收紧霍尔木兹海峡封锁，要求"逐日加强管控"，海湾局势趋紧（新华社/伊朗媒体）。</li>
-      <li>沙特首都利雅得最高建筑一周内再次遭袭，11人受伤，沙特联军指为伊朗支持的胡塞武装所为（新华社）。</li>
-      <li>俄国防部称打击乌能源设施与海上船只，俄乌战线持续拉锯，挪威与乌克兰讨论扩大反无人机合作（新华社）。</li>
-      <li>欧洲阿丽亚娜6型火箭成功发射36颗亚马逊低轨卫星，商业航天再进一步（新华网国际）。</li>
-      <li>COP31气候大会落下帷幕，气候多边主义承压前行，各国减排承诺仍存分歧（新华社）。</li>
-      <li>北约将在波兰部署一架预警机，回应此前俄导弹落入波兰事件（新华社）。</li>
-      <li>朝鲜考虑关闭瑞士驻平壤外交办事处，瑞士称即便如此仍维持对朝相关制裁（新华网）。</li>
-      <li>英伟达消息提振全球主要市场行情，科技股带动美股反弹，芯片板块受关注（新华社）。</li>
-      <li>伊拉克总理施压库尔德库区，强化油气田与口岸管控，内部博弈升温（新华网）。</li>
-      <li>2026全球6G发展大会在上海举行，中外机构共同发布《全球6G发展理念宣言》（新华社）。</li>
+      <li><a href="https://app.xinhuanet.com/news/article.html?articleId=202611244580ce7361da4381a8b6b123266e9fd2" target="_blank" rel="noopener">伊朗军队总司令哈塔米表示，七项条件落实前不仅不开放霍尔木兹海峡，还将"逐日收紧"封锁、加强管控。<span class="src">新华社 11-24</span></a></li>
+      <li><a href="http://www.xinhuanet.com/world/20261125/de367239f49344e782795238c12a90eb/c.html" target="_blank" rel="noopener">沙特首都利雅得最高建筑（公共投资基金大厦）一周内再次遭胡塞武装袭击，11人受伤。<span class="src">新华社 11-24</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">俄国防部称打击乌能源设施与海上船只，俄乌战线持续拉锯，挪威与乌克兰讨论扩大反无人机合作。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">欧洲阿丽亚娜6型火箭成功发射36颗亚马逊低轨卫星，商业航天再进一步。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">COP31气候大会落下帷幕，气候多边主义承压前行，各国减排承诺仍存分歧。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">北约将在波兰部署一架预警机，回应此前俄导弹落入波兰事件。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">朝鲜考虑关闭瑞士驻平壤外交办事处，瑞士称即便如此仍维持对朝相关制裁。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">英伟达消息提振全球主要市场行情，科技股带动美股反弹，芯片板块受关注。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">伊拉克总理施压库尔德库区，强化油气田与口岸管控，内部博弈升温。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://m.thepaper.cn/newsDetail_forward_34545594" target="_blank" rel="noopener">2026全球6G发展大会在上海举行，IMT-2030（6G）推进组与全球机构共同发布《全球6G发展理念宣言》。<span class="src">澎湃新闻 11-24</span></a></li>
     </ul>
   </div>
 
   <!-- 国内时事 -->
-  <div class="brief">
-    <h3>🇨🇳 国内时事</h3>
+  <div class="brief" id="list-china">
     <ul>
-      <li>神舟二十四号载人飞船计划于11月25日08时18分在酒泉发射，3名航天员乘组已与媒体见面（新华社）。</li>
-      <li>神舟二十三号完成任务后将返回东风着陆场，巴基斯坦航天员齐尚·阿里将随乘组返回（新华社）。</li>
-      <li>10月国民经济运行总体平稳、向新向优，就业形势总体稳定，高技术产业增长较快（国家统计局）。</li>
-      <li>全国人大常委会副委员长彭清华率团访问马耳他，宣介二十届五中全会精神、推进民间友好交流（新华社）。</li>
-      <li>各地推进以人为本的完整社区建设，高质量推进城市更新，坚持问需于民（央广网）。</li>
-      <li>二十届五中全会《关于持之以恒推进全面从严治党若干重大问题的决定》持续深入学习贯彻（央广网）。</li>
-      <li>冬季民生保障全面铺开，多地加强供暖、应急值守与寒潮天气交通疏导（央视新闻）。</li>
-      <li>2026全球6G发展大会在上海举行，国内推动6G标准与产业协同创新（新华社）。</li>
-      <li>多地持续优化营商环境、扩大高水平对外开放，自贸试验区改革深化（人民网）。</li>
-      <li>网络文明、基层治理等领域一批新举措落地，关注权威发布原文（人民网）。</li>
+      <li><a href="https://app.xinhuanet.com/news/article.html?articleId=2026112418101736be3f4ef098c062ec82fb2a2a" target="_blank" rel="noopener">中国瞄准11月25日08时18分发射神舟二十四号载人飞船，乘组由汤洪波、武毅和巴基斯坦航天员齐尚·阿里组成。<span class="src">新华社 11-24</span></a></li>
+      <li><a href="https://www.cmse.gov.cn/xwzx/202611/t20261124_57876.html" target="_blank" rel="noopener">神舟二十四号载人飞行任务新闻发布会在酒泉召开，介绍一年期在轨驻留、载人登月等任务安排。<span class="src">中国载人航天 11-24</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">10月国民经济运行总体平稳、向新向优，就业形势总体稳定，高技术产业增长较快。<span class="src">国家统计局/人民网</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">全国人大常委会副委员长彭清华率团访问马耳他，宣介二十届五中全会精神、推进民间友好交流。<span class="src">新华社/人民网</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">各地推进以人为本的完整社区建设，高质量推进城市更新，坚持问需于民。<span class="src">人民网</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">二十届五中全会《关于持之以恒推进全面从严治党若干重大问题的决定》持续深入学习贯彻。<span class="src">央广网/人民网</span></a></li>
+      <li><a href="https://news.cctv.com/" target="_blank" rel="noopener">冬季民生保障全面铺开，多地加强供暖、应急值守与寒潮天气交通疏导。<span class="src">央视新闻</span></a></li>
+      <li><a href="https://m.thepaper.cn/newsDetail_forward_34545594" target="_blank" rel="noopener">2026全球6G发展大会在上海举行，国内推动6G标准与产业协同创新。<span class="src">澎湃新闻 11-24</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">多地持续优化营商环境、扩大高水平对外开放，自贸试验区改革深化。<span class="src">人民网</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">网络文明、基层治理等领域一批新举措落地，关注权威发布原文。<span class="src">人民网</span></a></li>
     </ul>
   </div>
 
   <!-- 金融财经 -->
-  <div class="brief">
-    <h3>💰 金融财经</h3>
+  <div class="brief" id="list-finance">
     <ul>
-      <li>央行11月25日开展5000亿元7天期逆回购、8000亿元1年期MLF操作，保持银行体系流动性充裕（央行公告/证券时报）。</li>
-      <li>当日有1万亿元MLF到期，8000亿元MLF属等量对冲后的缩量续作，净回笼约2000亿元（央行公告）。</li>
-      <li>11月24日央行开展5160亿元隔夜逆回购，当日净投放165亿元，公开市场操作平稳（中国金融信息网）。</li>
-      <li>10月国民经济运行总体平稳、向新向优，消费与制造业投资延续修复（国家统计局）。</li>
-      <li>中证A股指数11月24日收于3316点附近，全天成交额约1.6万亿元，个股跌多涨少（Wind/中证）。</li>
-      <li>美股科技股受英伟达消息提振反弹，芯片板块波动加大，关注隔夜外盘传导（新华社）。</li>
-      <li>人民币汇率在合理区间双向波动，关注跨境资本流动与外贸订单情况（经济参考报）。</li>
-      <li>A股围绕科技、消费板块震荡，成交量与北向资金变化值得跟踪（证券时报）。</li>
-      <li>多家机构关注年底财政发力与专项债发行节奏，基建链预期升温（第一财经）。</li>
-      <li>黄金、原油等大宗商品受地缘局势与美元走势影响，价格波动加大（经济参考报）。</li>
+      <li><a href="http://www.xinhuanet.com/20261124/4f01eeb706714139b0d6939673cb6019/c.html" target="_blank" rel="noopener">央行11月25日开展8000亿元1年期MLF、5000亿元7天期逆回购操作，保持银行体系流动性充裕。<span class="src">新华社 11-24</span></a></li>
+      <li><a href="http://www.xinhuanet.com/20261124/4f01eeb706714139b0d6939673cb6019/c.html" target="_blank" rel="noopener">当日有1万亿元MLF到期，8000亿元MLF属缩量续作，本月净回笼约2000亿元。<span class="src">新华社 11-24</span></a></li>
+      <li><a href="http://www.cnstock.com/commonDetail/832710" target="_blank" rel="noopener">11月24日央行开展5160亿元隔夜逆回购操作，利率1.25%，当日净投放165亿元，平稳呵护跨月流动性。<span class="src">上海证券报 11-24</span></a></li>
+      <li><a href="http://www.jjckb.cn/" target="_blank" rel="noopener">10月国民经济运行总体平稳、向新向优，消费与制造业投资延续修复。<span class="src">国家统计局/经济参考报</span></a></li>
+      <li><a href="https://www.cs.com.cn/" target="_blank" rel="noopener">中证A股指数11月24日收于3316点附近，全天成交额约1.6万亿元，个股跌多涨少。<span class="src">中证网</span></a></li>
+      <li><a href="https://www.yicai.com/" target="_blank" rel="noopener">美股科技股受英伟达消息提振反弹，芯片板块波动加大，关注隔夜外盘传导。<span class="src">第一财经</span></a></li>
+      <li><a href="http://www.jjckb.cn/" target="_blank" rel="noopener">人民币汇率在合理区间双向波动，关注跨境资本流动与外贸订单情况。<span class="src">经济参考报</span></a></li>
+      <li><a href="https://www.stcn.com/" target="_blank" rel="noopener">A股围绕科技、消费板块震荡，成交量与北向资金变化值得跟踪。<span class="src">证券时报</span></a></li>
+      <li><a href="https://www.yicai.com/" target="_blank" rel="noopener">多家机构关注年底财政发力与专项债发行节奏，基建链预期升温。<span class="src">第一财经</span></a></li>
+      <li><a href="http://www.jjckb.cn/" target="_blank" rel="noopener">黄金、原油等大宗商品受地缘局势与美元走势影响，价格波动加大。<span class="src">经济参考报</span></a></li>
     </ul>
     <div class="note">仅为客观信息整理，不构成投资建议。</div>
   </div>
 
   <!-- 军事国防 -->
-  <div class="brief">
-    <h3>🪖 军事国防</h3>
+  <div class="brief" id="list-military">
     <ul>
-      <li>海军某支队呼伦湖舰开展海上航行补给训练，多科目海上训练在真打实抗中锤炼胜战本领（国防部网）。</li>
-      <li>中国海军"吉祥方舟"号医院船执行"和谐使命-2026"任务，抵达赤道几内亚巴塔港开展友好访问与医疗服务（国防部网）。</li>
-      <li>中柬两军将举行联合演习，深化防务安全合作（新华社/中国军网）。</li>
-      <li>中印尼"利刃-2026"陆军反恐联合训练举行结训仪式，双方协同反恐能力得到检验（国防部网）。</li>
-      <li>中越将举行"合作—2026"反恐联合训练，周边安全合作持续推进（国防部网）。</li>
-      <li>中巴"喀喇昆仑-2026"陆军联合训练深化两军实战化协同（国防部网）。</li>
-      <li>中国第24批赴黎巴嫩维和部队464名官兵被授予联合国和平勋章（国防部网）。</li>
-      <li>空军公布攻击-11无人机实弹任务画面，首批女性无人机机组实现首发命中（中国军网）。</li>
-      <li>第77集团军某旅、第76集团军某旅分别组织实弹射击训练，实战化练兵常态化（国防部网）。</li>
-      <li>第十六届珠海航展定于12月7日至13日举行，075两栖攻击舰、055驱逐舰等现役主战舰艇将面向公众开放（中国军网）。</li>
+      <li><a href="http://www.mod.gov.cn/gfbw/tp_214132/16499343.html" target="_blank" rel="noopener">海军某支队呼伦湖舰开展海上航行补给训练，多科目海上训练在真打实抗中锤炼胜战本领。<span class="src">国防部网 11-11</span></a></li>
+      <li><a href="http://www.mod.gov.cn/gfbw/jswj/16501314.html" target="_blank" rel="noopener">中国海军"吉祥方舟"号医院船执行"和谐使命-2026"任务，抵达赤道几内亚巴塔港开展友好访问与医疗服务。<span class="src">国防部网 11-22</span></a></li>
+      <li><a href="https://www.81.cn/" target="_blank" rel="noopener">中柬两军将举行联合演习，深化防务安全合作。<span class="src">中国军网</span></a></li>
+      <li><a href="https://www.81.cn/" target="_blank" rel="noopener">中印尼"利刃-2026"陆军反恐联合训练举行结训仪式，双方协同反恐能力得到检验。<span class="src">中国军网</span></a></li>
+      <li><a href="https://www.81.cn/" target="_blank" rel="noopener">中越将举行"合作—2026"反恐联合训练，周边安全合作持续推进。<span class="src">中国军网</span></a></li>
+      <li><a href="https://www.81.cn/" target="_blank" rel="noopener">中巴"喀喇昆仑-2026"陆军联合训练深化两军实战化协同。<span class="src">中国军网</span></a></li>
+      <li><a href="http://www.mod.gov.cn/" target="_blank" rel="noopener">中国第24批赴黎巴嫩维和部队464名官兵被授予联合国和平勋章。<span class="src">国防部网</span></a></li>
+      <li><a href="https://www.81.cn/" target="_blank" rel="noopener">空军公布攻击-11无人机实弹任务画面，首批女性无人机机组实现首发命中。<span class="src">中国军网</span></a></li>
+      <li><a href="http://www.mod.gov.cn/" target="_blank" rel="noopener">第77集团军某旅、第76集团军某旅分别组织实弹射击训练，实战化练兵常态化。<span class="src">国防部网</span></a></li>
+      <li><a href="https://www.airshow.com.cn/index.aspx" target="_blank" rel="noopener">第十六届珠海航展定于12月7日至13日举行，075两栖攻击舰、055驱逐舰等现役主战舰艇将面向公众开放。<span class="src">珠海航展官网</span></a></li>
     </ul>
   </div>
 
   <!-- 云南本地 -->
-  <div class="brief">
-    <h3>🏔️ 云南本地</h3>
+  <div class="brief" id="list-local">
     <ul>
-      <li>11月24至25日昆明自西向东强降温，最高气温下降8~10℃、局地超12℃，东北部有雨夹雪、高海拔小到中雪（春城晚报/8099999）。</li>
-      <li>冷空气来去较快，周四起昆明恢复晴朗，11月26日多云7~17℃，出行备好保暖（气象预报）。</li>
-      <li>寻甸县发布道路结冰黄色预警，柯渡、倘甸等乡镇未来12小时注意行车安全（国家预警信息发布中心）。</li>
-      <li>2026第九届中国昆明金茶花国际文创设计大赛暨首届"云南礼物"创新设计大赛终评结果出炉（云南网）。</li>
-      <li>昆明翠湖公园调整冬季开放时间，游园前可查看最新公告（开屏新闻）。</li>
-      <li>昆明市公安局五华分局就云南川大农牧科技公司涉嫌非法吸收公众存款案发布报案通告（开屏新闻）。</li>
-      <li>昆明一消费者诉周六福黄金交易纠纷案在官渡区法院开庭，涉大额购金提货争议（媒体报道）。</li>
-      <li>云南省印发自然资源保护利用、国民健康、数字云南建设等多个"十五五"专项规划（云南省人民政府网）。</li>
-      <li>腾冲科学家论坛创办5周年，2026年论坛定于12月4日至6日举行（开屏新闻）。</li>
-      <li>滇中多地进入森林防火与防寒保供关键期，出行留意天气与林区管制信息（云南省人民政府网）。</li>
+      <li><a href="https://m.gmw.cn/2026-11/24/content_1304588854.htm" target="_blank" rel="noopener">11月24至25日昆明自西向东强降温，最高气温下降8~10℃、局地超12℃，东北部有雨夹雪、高海拔小到中雪。<span class="src">光明网 11-24</span></a></li>
+      <li><a href="https://m.gmw.cn/2026-11/24/content_1304588854.htm" target="_blank" rel="noopener">冷空气来去较快，周四起昆明恢复晴朗，11月26日多云7~17℃，出行备好保暖。<span class="src">气象预报/光明网</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">寻甸县发布道路结冰黄色预警，柯渡、倘甸等乡镇未来12小时注意行车安全。<span class="src">国家预警/开屏新闻</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">2026第九届中国昆明金茶花国际文创设计大赛暨首届"云南礼物"创新设计大赛终评结果出炉。<span class="src">云南网/开屏新闻</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">昆明翠湖公园调整冬季开放时间，游园前可查看最新公告。<span class="src">开屏新闻</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">昆明市公安局五华分局就云南川大农牧科技公司涉嫌非法吸收公众存款案发布报案通告。<span class="src">开屏新闻</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">昆明一消费者诉周六福黄金交易纠纷案在官渡区法院开庭，涉大额购金提货争议。<span class="src">媒体报道/开屏新闻</span></a></li>
+      <li><a href="https://www.yn.gov.cn/" target="_blank" rel="noopener">云南省印发自然资源保护利用、国民健康、数字云南建设等多个"十五五"专项规划。<span class="src">云南省人民政府网</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">腾冲科学家论坛创办5周年，2026年论坛定于12月4日至6日举行。<span class="src">开屏新闻</span></a></li>
+      <li><a href="https://www.yn.gov.cn/" target="_blank" rel="noopener">滇中多地进入森林防火与防寒保供关键期，出行留意天气与林区管制信息。<span class="src">云南省人民政府网</span></a></li>
     </ul>
   </div>
 
@@ -222,6 +222,21 @@
 
 <!-- 全球热点 -->
 <section id="sec-global">
+  <div class="panel-title">🌍 全球热点 · 今日要点</div>
+  <div class="brief">
+    <ul>
+      <li><a href="https://app.xinhuanet.com/news/article.html?articleId=202611244580ce7361da4381a8b6b123266e9fd2" target="_blank" rel="noopener">伊朗军队总司令哈塔米表示，七项条件落实前不仅不开放霍尔木兹海峡，还将"逐日收紧"封锁、加强管控。<span class="src">新华社 11-24</span></a></li>
+      <li><a href="http://www.xinhuanet.com/world/20261125/de367239f49344e782795238c12a90eb/c.html" target="_blank" rel="noopener">沙特首都利雅得最高建筑（公共投资基金大厦）一周内再次遭胡塞武装袭击，11人受伤。<span class="src">新华社 11-24</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">俄国防部称打击乌能源设施与海上船只，俄乌战线持续拉锯，挪威与乌克兰讨论扩大反无人机合作。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">欧洲阿丽亚娜6型火箭成功发射36颗亚马逊低轨卫星，商业航天再进一步。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">COP31气候大会落下帷幕，气候多边主义承压前行，各国减排承诺仍存分歧。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">北约将在波兰部署一架预警机，回应此前俄导弹落入波兰事件。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">朝鲜考虑关闭瑞士驻平壤外交办事处，瑞士称即便如此仍维持对朝相关制裁。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">英伟达消息提振全球主要市场行情，科技股带动美股反弹，芯片板块受关注。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://www.news.cn/world/" target="_blank" rel="noopener">伊拉克总理施压库尔德库区，强化油气田与口岸管控，内部博弈升温。<span class="src">新华社国际</span></a></li>
+      <li><a href="https://m.thepaper.cn/newsDetail_forward_34545594" target="_blank" rel="noopener">2026全球6G发展大会在上海举行，IMT-2030（6G）推进组与全球机构共同发布《全球6G发展理念宣言》。<span class="src">澎湃新闻 11-24</span></a></li>
+    </ul>
+  </div>
   <div class="sec-title"><span class="dot"></span>全球热点 · 权威入口</div>
   <div class="media">
     <a href="https://www.news.cn/world/" target="_blank" rel="noopener">
@@ -245,6 +260,21 @@
 
 <!-- 国内时事 -->
 <section id="sec-china">
+  <div class="panel-title">🇨🇳 国内时事 · 今日要点</div>
+  <div class="brief">
+    <ul>
+      <li><a href="https://app.xinhuanet.com/news/article.html?articleId=2026112418101736be3f4ef098c062ec82fb2a2a" target="_blank" rel="noopener">中国瞄准11月25日08时18分发射神舟二十四号载人飞船，乘组由汤洪波、武毅和巴基斯坦航天员齐尚·阿里组成。<span class="src">新华社 11-24</span></a></li>
+      <li><a href="https://www.cmse.gov.cn/xwzx/202611/t20261124_57876.html" target="_blank" rel="noopener">神舟二十四号载人飞行任务新闻发布会在酒泉召开，介绍一年期在轨驻留、载人登月等任务安排。<span class="src">中国载人航天 11-24</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">10月国民经济运行总体平稳、向新向优，就业形势总体稳定，高技术产业增长较快。<span class="src">国家统计局/人民网</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">全国人大常委会副委员长彭清华率团访问马耳他，宣介二十届五中全会精神、推进民间友好交流。<span class="src">新华社/人民网</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">各地推进以人为本的完整社区建设，高质量推进城市更新，坚持问需于民。<span class="src">人民网</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">二十届五中全会《关于持之以恒推进全面从严治党若干重大问题的决定》持续深入学习贯彻。<span class="src">央广网/人民网</span></a></li>
+      <li><a href="https://news.cctv.com/" target="_blank" rel="noopener">冬季民生保障全面铺开，多地加强供暖、应急值守与寒潮天气交通疏导。<span class="src">央视新闻</span></a></li>
+      <li><a href="https://m.thepaper.cn/newsDetail_forward_34545594" target="_blank" rel="noopener">2026全球6G发展大会在上海举行，国内推动6G标准与产业协同创新。<span class="src">澎湃新闻 11-24</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">多地持续优化营商环境、扩大高水平对外开放，自贸试验区改革深化。<span class="src">人民网</span></a></li>
+      <li><a href="http://www.people.com.cn/" target="_blank" rel="noopener">网络文明、基层治理等领域一批新举措落地，关注权威发布原文。<span class="src">人民网</span></a></li>
+    </ul>
+  </div>
   <div class="sec-title"><span class="dot"></span>国内时事 · 权威入口</div>
   <div class="media">
     <a href="http://www.people.com.cn/" target="_blank" rel="noopener">
@@ -268,6 +298,22 @@
 
 <!-- 金融财经 -->
 <section id="sec-finance">
+  <div class="panel-title">💰 金融财经 · 今日要点</div>
+  <div class="brief">
+    <ul>
+      <li><a href="http://www.xinhuanet.com/20261124/4f01eeb706714139b0d6939673cb6019/c.html" target="_blank" rel="noopener">央行11月25日开展8000亿元1年期MLF、5000亿元7天期逆回购操作，保持银行体系流动性充裕。<span class="src">新华社 11-24</span></a></li>
+      <li><a href="http://www.xinhuanet.com/20261124/4f01eeb706714139b0d6939673cb6019/c.html" target="_blank" rel="noopener">当日有1万亿元MLF到期，8000亿元MLF属缩量续作，本月净回笼约2000亿元。<span class="src">新华社 11-24</span></a></li>
+      <li><a href="http://www.cnstock.com/commonDetail/832710" target="_blank" rel="noopener">11月24日央行开展5160亿元隔夜逆回购操作，利率1.25%，当日净投放165亿元，平稳呵护跨月流动性。<span class="src">上海证券报 11-24</span></a></li>
+      <li><a href="http://www.jjckb.cn/" target="_blank" rel="noopener">10月国民经济运行总体平稳、向新向优，消费与制造业投资延续修复。<span class="src">国家统计局/经济参考报</span></a></li>
+      <li><a href="https://www.cs.com.cn/" target="_blank" rel="noopener">中证A股指数11月24日收于3316点附近，全天成交额约1.6万亿元，个股跌多涨少。<span class="src">中证网</span></a></li>
+      <li><a href="https://www.yicai.com/" target="_blank" rel="noopener">美股科技股受英伟达消息提振反弹，芯片板块波动加大，关注隔夜外盘传导。<span class="src">第一财经</span></a></li>
+      <li><a href="http://www.jjckb.cn/" target="_blank" rel="noopener">人民币汇率在合理区间双向波动，关注跨境资本流动与外贸订单情况。<span class="src">经济参考报</span></a></li>
+      <li><a href="https://www.stcn.com/" target="_blank" rel="noopener">A股围绕科技、消费板块震荡，成交量与北向资金变化值得跟踪。<span class="src">证券时报</span></a></li>
+      <li><a href="https://www.yicai.com/" target="_blank" rel="noopener">多家机构关注年底财政发力与专项债发行节奏，基建链预期升温。<span class="src">第一财经</span></a></li>
+      <li><a href="http://www.jjckb.cn/" target="_blank" rel="noopener">黄金、原油等大宗商品受地缘局势与美元走势影响，价格波动加大。<span class="src">经济参考报</span></a></li>
+    </ul>
+    <div class="note">仅为客观信息整理，不构成投资建议。</div>
+  </div>
   <div class="sec-title"><span class="dot"></span>金融财经 · 权威入口</div>
   <div class="brief">
     <h3>📌 两类需求分开看</h3>
@@ -303,6 +349,21 @@
 
 <!-- 军事国防 -->
 <section id="sec-military">
+  <div class="panel-title">🪖 军事国防 · 今日要点</div>
+  <div class="brief">
+    <ul>
+      <li><a href="http://www.mod.gov.cn/gfbw/tp_214132/16499343.html" target="_blank" rel="noopener">海军某支队呼伦湖舰开展海上航行补给训练，多科目海上训练在真打实抗中锤炼胜战本领。<span class="src">国防部网 11-11</span></a></li>
+      <li><a href="http://www.mod.gov.cn/gfbw/jswj/16501314.html" target="_blank" rel="noopener">中国海军"吉祥方舟"号医院船执行"和谐使命-2026"任务，抵达赤道几内亚巴塔港开展友好访问与医疗服务。<span class="src">国防部网 11-22</span></a></li>
+      <li><a href="https://www.81.cn/" target="_blank" rel="noopener">中柬两军将举行联合演习，深化防务安全合作。<span class="src">中国军网</span></a></li>
+      <li><a href="https://www.81.cn/" target="_blank" rel="noopener">中印尼"利刃-2026"陆军反恐联合训练举行结训仪式，双方协同反恐能力得到检验。<span class="src">中国军网</span></a></li>
+      <li><a href="https://www.81.cn/" target="_blank" rel="noopener">中越将举行"合作—2026"反恐联合训练，周边安全合作持续推进。<span class="src">中国军网</span></a></li>
+      <li><a href="https://www.81.cn/" target="_blank" rel="noopener">中巴"喀喇昆仑-2026"陆军联合训练深化两军实战化协同。<span class="src">中国军网</span></a></li>
+      <li><a href="http://www.mod.gov.cn/" target="_blank" rel="noopener">中国第24批赴黎巴嫩维和部队464名官兵被授予联合国和平勋章。<span class="src">国防部网</span></a></li>
+      <li><a href="https://www.81.cn/" target="_blank" rel="noopener">空军公布攻击-11无人机实弹任务画面，首批女性无人机机组实现首发命中。<span class="src">中国军网</span></a></li>
+      <li><a href="http://www.mod.gov.cn/" target="_blank" rel="noopener">第77集团军某旅、第76集团军某旅分别组织实弹射击训练，实战化练兵常态化。<span class="src">国防部网</span></a></li>
+      <li><a href="https://www.airshow.com.cn/index.aspx" target="_blank" rel="noopener">第十六届珠海航展定于12月7日至13日举行，075两栖攻击舰、055驱逐舰等现役主战舰艇将面向公众开放。<span class="src">珠海航展官网</span></a></li>
+    </ul>
+  </div>
   <div class="sec-title"><span class="dot"></span>军事国防 · 权威入口</div>
   <div class="media">
     <a href="https://www.81.cn/" target="_blank" rel="noopener">
@@ -321,6 +382,21 @@
 
 <!-- 云南本地 -->
 <section id="sec-local">
+  <div class="panel-title">🏔️ 云南本地 · 今日要点</div>
+  <div class="brief">
+    <ul>
+      <li><a href="https://m.gmw.cn/2026-11/24/content_1304588854.htm" target="_blank" rel="noopener">11月24至25日昆明自西向东强降温，最高气温下降8~10℃、局地超12℃，东北部有雨夹雪、高海拔小到中雪。<span class="src">光明网 11-24</span></a></li>
+      <li><a href="https://m.gmw.cn/2026-11/24/content_1304588854.htm" target="_blank" rel="noopener">冷空气来去较快，周四起昆明恢复晴朗，11月26日多云7~17℃，出行备好保暖。<span class="src">气象预报/光明网</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">寻甸县发布道路结冰黄色预警，柯渡、倘甸等乡镇未来12小时注意行车安全。<span class="src">国家预警/开屏新闻</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">2026第九届中国昆明金茶花国际文创设计大赛暨首届"云南礼物"创新设计大赛终评结果出炉。<span class="src">云南网/开屏新闻</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">昆明翠湖公园调整冬季开放时间，游园前可查看最新公告。<span class="src">开屏新闻</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">昆明市公安局五华分局就云南川大农牧科技公司涉嫌非法吸收公众存款案发布报案通告。<span class="src">开屏新闻</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">昆明一消费者诉周六福黄金交易纠纷案在官渡区法院开庭，涉大额购金提货争议。<span class="src">媒体报道/开屏新闻</span></a></li>
+      <li><a href="https://www.yn.gov.cn/" target="_blank" rel="noopener">云南省印发自然资源保护利用、国民健康、数字云南建设等多个"十五五"专项规划。<span class="src">云南省人民政府网</span></a></li>
+      <li><a href="https://www.ccwb.cn/" target="_blank" rel="noopener">腾冲科学家论坛创办5周年，2026年论坛定于12月4日至6日举行。<span class="src">开屏新闻</span></a></li>
+      <li><a href="https://www.yn.gov.cn/" target="_blank" rel="noopener">滇中多地进入森林防火与防寒保供关键期，出行留意天气与林区管制信息。<span class="src">云南省人民政府网</span></a></li>
+    </ul>
+  </div>
   <div class="sec-title"><span class="dot"></span>云南本地 · 昆明身边事</div>
   <div class="media">
     <a href="https://www.ccwb.cn/" target="_blank" rel="noopener">
